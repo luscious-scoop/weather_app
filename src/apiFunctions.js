@@ -1,4 +1,4 @@
-const ApiController = () => {
+const APIController = () => {
   const apiKey = 'EKS79RHNPFCJU4NX8PUVYBEJP';
 
   async function fetchApiData() {
@@ -33,4 +33,6 @@ const ApiController = () => {
   };
 };
 
-export { ApiController };
+const apiController = APIController();
+
+export { apiController };

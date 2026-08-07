@@ -1,3 +1,3 @@
-import { ApiController } from './apiFunctions.js';
+import { apiController } from './apiFunctions.js';
 
-ApiController().fetchApiData();
+apiController.fetchApiData();
