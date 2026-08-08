@@ -53,4 +53,12 @@ export const screenController = () => {
 
     main.appendChild(card);
   }
+
+  input.addEventListener('input', () => {
+    if (input.value !== '') {
+      searchBtn.disabled = false;
+    } else {
+      searchBtn.disabled = true;
+    }
+  });
 };
