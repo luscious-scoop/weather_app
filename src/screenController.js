@@ -76,15 +76,11 @@ export const screenController = () => {
     main.appendChild(card);
   }
 
-  input.addEventListener('input', () => {
-    if (input.value !== '') {
-      searchBtn.disabled = false;
-    } else {
-      searchBtn.disabled = true;
-    }
-  });
-
   async function renderCardEvent() {
+    if (input.value === '') {
+      alert('Please enter  a location.');
+      return;
+    }
     let data = await apiController.fetchApiData(input.value);
     if (!data) {
       return;
