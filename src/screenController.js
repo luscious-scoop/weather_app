@@ -49,8 +49,27 @@ export const screenController = () => {
     temperatureDiv.appendChild(temperature);
     temperatureDiv.appendChild(feelsLikeTemp);
 
+    const convertTempBtns = document.createElement('div');
+    convertTempBtns.classList.add('convert-btns');
+
+    const celsiusBtn = document.createElement('button');
+    celsiusBtn.textContent = `°C`;
+    celsiusBtn.classList.add('celsius-btn');
+    const fahrenheitBtn = document.createElement('button');
+    fahrenheitBtn.textContent = '°F';
+    fahrenheitBtn.classList.add('fahrenheit-btn');
+
+    const separator = document.createElement('p');
+    separator.textContent = '│';
+    separator.classList.add('separator');
+
+    convertTempBtns.appendChild(celsiusBtn);
+    convertTempBtns.appendChild(separator);
+    convertTempBtns.appendChild(fahrenheitBtn);
+
     weatherDiv.appendChild(weatherIcon);
     weatherDiv.appendChild(temperatureDiv);
+    weatherDiv.appendChild(convertTempBtns);
 
     card.appendChild(weatherDiv);
 
@@ -72,6 +91,9 @@ export const screenController = () => {
     }
     render(data);
   }
+
+  function convertTemperature(element) {}
+
   searchBtn.addEventListener('click', () => {
     renderCardEvent();
   });
