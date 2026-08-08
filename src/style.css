@@ -79,6 +79,10 @@ h6 {
     #0f3460 67%,
     #4a4e69 100%
   );
+
+  --input-font-clr: #0f0326;
+  --search-btn-clr: linear-gradient(45deg, #000000, #222222 50%, #333333 100%);
+  --main-font-clr: #ffffff;
 }
 
 body {
@@ -87,4 +91,29 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.search-div {
+  margin-top: 28px;
+}
+
+.search-div > input,
+.search-div > button {
+  padding: 8px 14px;
+}
+.search-div > input {
+  color: var(--input-font-clr);
+  border-radius: 4px;
+  border: none;
+}
+
+.search-div > input:focus {
+  outline: none;
+}
+.search-div > button {
+  background: var(--search-btn-clr);
+  color: var(--main-font-clr);
+  cursor: pointer;
+  border-radius: 6px;
+  border: none;
 }
