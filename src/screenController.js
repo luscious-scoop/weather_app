@@ -1,4 +1,5 @@
 import { apiController } from './apiFunctions.js';
+import locationIconSrc from './icons/location.png';
 
 export const screenController = () => {
   const main = document.querySelector('main');
@@ -17,6 +18,7 @@ export const screenController = () => {
     const locationIcon = document.createElement('img');
     locationIcon.classList.add('location-icon');
     locationIcon.setAttribute('alt', 'location-icon');
+    locationIcon.src = `${locationIconSrc}`;
 
     const location = document.createElement('p');
     location.classList.add('location');
