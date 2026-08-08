@@ -67,7 +67,9 @@ export const screenController = () => {
 
   async function renderCardEvent() {
     let data = await apiController.fetchApiData(input.value);
-
+    if (!data) {
+      return;
+    }
     render(data);
   }
   searchBtn.addEventListener('click', () => {

@@ -9,7 +9,7 @@ const APIController = () => {
 
       if (response.status >= 400) {
         alert('location not found');
-        return;
+        return false;
       }
       const data = await response.json();
       return processAPIData(data);
