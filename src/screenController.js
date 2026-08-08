@@ -102,12 +102,12 @@ export const screenController = () => {
     const fahrenheit = F;
     const celsius = (fahrenheit - 32) * (5 / 9);
 
-    const result = `${Math.round(celsius)}°C`;
+    const result = `${Math.floor(celsius)}°C`;
     return result;
   }
 
   function convertTemperatureToFahrenheit(F) {
-    const result = `${Math.round(F)}°F`;
+    const result = `${Math.floor(F)}°F`;
     return result;
   }
 
