@@ -149,7 +149,7 @@ body {
 .convert-btns button {
   background: transparent;
   border: none;
-  color: var(--main-font-clr);
+  color: black;
 }
 
 .temp {
@@ -159,4 +159,8 @@ body {
 
 .feels-like {
   font-size: 0.7rem;
+}
+
+button.selected {
+  color: white !important;
 }

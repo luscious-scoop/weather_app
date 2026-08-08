@@ -61,9 +61,12 @@ export const screenController = () => {
     const celsiusBtn = document.createElement('button');
     celsiusBtn.textContent = `°C`;
     celsiusBtn.classList.add('celsius-btn');
+    celsiusBtn.classList.add('temp-btn');
+
     const fahrenheitBtn = document.createElement('button');
     fahrenheitBtn.textContent = '°F';
     fahrenheitBtn.classList.add('fahrenheit-btn');
+    fahrenheitBtn.classList.add('temp-btn');
 
     const separator = document.createElement('p');
     separator.textContent = '│';
@@ -123,6 +126,20 @@ export const screenController = () => {
     fahrenheitBtn.addEventListener('click', () => {
       temp.textContent = convertTemperatureToFahrenheit(temperature);
       feelsLike.textContent = `Feels like ${convertTemperatureToFahrenheit(feelsLikeTemp)}`;
+    });
+
+    changeSelectedUnit();
+  }
+
+  function changeSelectedUnit() {
+    const unitBtns = document.querySelectorAll('.temp-btn');
+    document.querySelector('.celsius-btn').classList.add('selected');
+
+    unitBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelector('.selected').classList.remove('selected');
+        btn.classList.add('selected');
+      });
     });
   }
 
