@@ -1,12 +1,21 @@
 const APIController = () => {
   const apiKey = 'EKS79RHNPFCJU4NX8PUVYBEJP';
 
-  async function fetchApiData() {
-    const response = await fetch(
-      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/rawalpindi?key=${apiKey}`
-    );
-    const data = await response.json();
-    processAPIData(data);
+  async function fetchApiData(location) {
+    try {
+      const response = await fetch(
+        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=${apiKey}`
+      );
+
+      if (response.status >= 400) {
+        alert('location not found');
+        return;
+      }
+      const data = await response.json();
+      processAPIData(data);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   function processAPIData(data) {

@@ -1,3 +1,3 @@
 import { apiController } from './apiFunctions.js';
 
-apiController.fetchApiData();
+apiController.fetchApiData('Rawalpindi');
