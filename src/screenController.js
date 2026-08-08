@@ -45,11 +45,12 @@ export const screenController = () => {
 
     const temperature = document.createElement('p');
     temperature.classList.add('temp');
-    temperature.textContent = `${data.temp}°F`;
+
+    temperature.textContent = convertTemperatureToCelsius(data.temp);
 
     const feelsLikeTemp = document.createElement('p');
     feelsLikeTemp.classList.add('feels-like');
-    feelsLikeTemp.textContent = `Feels like ${data.feelsLike}°`;
+    feelsLikeTemp.textContent = `Feels like ${convertTemperatureToCelsius(data.feelsLike)}`;
 
     temperatureDiv.appendChild(temperature);
     temperatureDiv.appendChild(feelsLikeTemp);
@@ -93,7 +94,13 @@ export const screenController = () => {
     render(data);
   }
 
-  function convertTemperature(element) {}
+  function convertTemperatureToCelsius(F) {
+    const fahrenheit = F;
+    const celsius = (fahrenheit - 32) * (5 / 9);
+
+    const result = `${Math.floor(celsius)}°C`;
+    return result;
+  }
 
   searchBtn.addEventListener('click', () => {
     renderCardEvent();
