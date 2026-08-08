@@ -83,6 +83,7 @@ h6 {
   --input-font-clr: #0f0326;
   --search-btn-clr: linear-gradient(45deg, #000000, #222222 50%, #333333 100%);
   --main-font-clr: #ffffff;
+  --card-bg-clr: rgba(255, 255, 255, 0.2);
 }
 
 body {
@@ -91,6 +92,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 30px;
 }
 
 .search-div {
@@ -116,4 +118,8 @@ body {
   cursor: pointer;
   border-radius: 6px;
   border: none;
+}
+
+.card {
+  background-color: var(--card-bg-clr);
 }

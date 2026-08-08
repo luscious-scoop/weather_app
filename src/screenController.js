@@ -9,7 +9,7 @@ export const screenController = () => {
     main.textContent = '';
 
     const card = document.createElement('div');
-    card.classList.add('.card');
+    card.classList.add('card');
 
     const locationDiv = document.createElement('div');
     locationDiv.classList.add('location-div');
