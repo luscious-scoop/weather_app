@@ -80,6 +80,7 @@ export const screenController = () => {
     card.appendChild(weatherDiv);
 
     main.appendChild(card);
+    ConverterEvent(data.temp, data.feelsLike);
   }
 
   async function renderCardEvent() {
@@ -98,8 +99,31 @@ export const screenController = () => {
     const fahrenheit = F;
     const celsius = (fahrenheit - 32) * (5 / 9);
 
-    const result = `${Math.floor(celsius)}°C`;
+    const result = `${Math.round(celsius)}°C`;
     return result;
+  }
+
+  function convertTemperatureToFahrenheit(F) {
+    const result = `${Math.round(F)}°F`;
+    return result;
+  }
+
+  function ConverterEvent(temperature, feelsLikeTemp) {
+    const temp = document.querySelector('.temp');
+    const feelsLike = document.querySelector('.feels-like');
+
+    const celsiusBtn = document.querySelector('.celsius-btn');
+    const fahrenheitBtn = document.querySelector('.fahrenheit-btn');
+
+    celsiusBtn.addEventListener('click', () => {
+      temp.textContent = convertTemperatureToCelsius(temperature);
+      feelsLike.textContent = `Feels like ${convertTemperatureToCelsius(feelsLikeTemp)}`;
+    });
+
+    fahrenheitBtn.addEventListener('click', () => {
+      temp.textContent = convertTemperatureToFahrenheit(temperature);
+      feelsLike.textContent = `Feels like ${convertTemperatureToFahrenheit(feelsLikeTemp)}`;
+    });
   }
 
   searchBtn.addEventListener('click', () => {
