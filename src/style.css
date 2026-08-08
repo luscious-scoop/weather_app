@@ -70,3 +70,21 @@ h6 {
 }
 
 /* =====CSS RESET END ===== */
+
+:root {
+  --body-bg: linear-gradient(
+    45deg,
+    #0a142e,
+    #16213e 33%,
+    #0f3460 67%,
+    #4a4e69 100%
+  );
+}
+
+body {
+  background: var(--body-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
