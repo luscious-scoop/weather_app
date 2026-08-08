@@ -12,7 +12,7 @@ const APIController = () => {
         return;
       }
       const data = await response.json();
-      processAPIData(data);
+      return processAPIData(data);
     } catch (error) {
       console.error(error);
     }
