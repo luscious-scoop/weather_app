@@ -42,11 +42,11 @@ export const screenController = () => {
 
     const temperature = document.createElement('p');
     temperature.classList.add('temp');
-    temperature.textContent = data.temp;
+    temperature.textContent = `${data.temp}°F`;
 
     const feelsLikeTemp = document.createElement('p');
     feelsLikeTemp.classList.add('feels-like');
-    feelsLikeTemp.textContent = data.feelsLike;
+    feelsLikeTemp.textContent = `Feels like ${data.feelsLike}°`;
 
     temperatureDiv.appendChild(temperature);
     temperatureDiv.appendChild(feelsLikeTemp);

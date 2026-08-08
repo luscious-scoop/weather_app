@@ -122,5 +122,39 @@ body {
 }
 
 .card {
+  width: 350px;
+  height: 400px;
   background-color: var(--card-bg-clr);
+  display: flex;
+  flex-direction: column;
+}
+
+.location-div {
+  border: 2px solid red;
+  display: flex;
+  align-items: center;
+}
+
+.weather-div {
+  border: 2px solid yellow;
+  display: flex;
+}
+
+.convert-btns {
+  display: flex;
+  align-items: center;
+}
+
+.convert-btns button {
+  background: transparent;
+  border: none;
+  color: var(--main-font-clr);
+}
+
+.temp {
+  font-size: 1.6rem;
+}
+
+.feels-like {
+  font-size: 0.7rem;
 }
