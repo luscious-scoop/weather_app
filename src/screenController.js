@@ -5,7 +5,7 @@ export const screenController = () => {
   const input = document.querySelector('input[type="text"]');
   const searchBtn = document.querySelector('.search-btn');
 
-  function render() {
+  function render(data) {
     main.textContent = '';
 
     const card = document.createElement('div');
@@ -20,6 +20,7 @@ export const screenController = () => {
 
     const location = document.createElement('p');
     location.classList.add('location');
+    location.textContent = data.address;
 
     locationDiv.appendChild(locationIcon);
     locationDiv.appendChild(location);
@@ -39,9 +40,11 @@ export const screenController = () => {
 
     const temperature = document.createElement('p');
     temperature.classList.add('temp');
+    temperature.textContent = data.temp;
 
     const feelsLikeTemp = document.createElement('p');
-    feelsLikeTemp.classList('feels-like');
+    feelsLikeTemp.classList.add('feels-like');
+    feelsLikeTemp.textContent = data.feelsLike;
 
     temperatureDiv.appendChild(temperature);
     temperatureDiv.appendChild(feelsLikeTemp);
@@ -60,5 +63,14 @@ export const screenController = () => {
     } else {
       searchBtn.disabled = true;
     }
+  });
+
+  async function renderCardEvent() {
+    let data = await apiController.fetchApiData(input.value);
+
+    render(data);
+  }
+  searchBtn.addEventListener('click', () => {
+    renderCardEvent();
   });
 };

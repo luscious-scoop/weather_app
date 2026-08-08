@@ -34,7 +34,8 @@ const APIController = () => {
         icon: data.currentConditions.icon,
       }
     );
-    console.log(processedData);
+
+    return processedData;
   }
 
   return {

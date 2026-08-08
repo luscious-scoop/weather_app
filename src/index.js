@@ -1,3 +1,3 @@
-import { apiController } from './apiFunctions.js';
+import { screenController } from './screenController.js';
 
-apiController.fetchApiData('Rawalpindi');
+screenController();
