@@ -138,6 +138,7 @@ body {
 .weather-div {
   border: 2px solid yellow;
   display: flex;
+  align-items: center;
 }
 
 .convert-btns {
@@ -153,6 +154,7 @@ body {
 
 .temp {
   font-size: 1.6rem;
+  font-weight: bold;
 }
 
 .feels-like {
