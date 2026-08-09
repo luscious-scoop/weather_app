@@ -113,7 +113,7 @@ export const screenController = () => {
     const precipationValue = document.createElement('p');
     precipationValue.textContent = `${data.precip}%`;
 
-    const precipationTitle = document.createElement('p');
+    const precipationTitle = document.createElement('span');
     precipationTitle.textContent = 'Precip';
 
     precipationDiv.appendChild(precipationIcon);
@@ -130,7 +130,7 @@ export const screenController = () => {
     const uvValue = document.createElement('p');
     uvValue.textContent = data.uvindex;
 
-    const uvTitle = document.createElement('p');
+    const uvTitle = document.createElement('span');
     uvTitle.textContent = 'UV Index';
 
     uvIndexDiv.appendChild(uvIndexIcon);
@@ -147,7 +147,7 @@ export const screenController = () => {
     const windValue = document.createElement('p');
     windValue.textContent = data.wind;
 
-    const windTitle = document.createElement('p');
+    const windTitle = document.createElement('span');
     windTitle.textContent = 'Wind';
 
     windDiv.appendChild(windIcon);
@@ -164,7 +164,7 @@ export const screenController = () => {
     const humidityValue = document.createElement('p');
     humidityValue.textContent = `${data.humidity}%`;
 
-    const humidityTitle = document.createElement('p');
+    const humidityTitle = document.createElement('span');
     humidityTitle.textContent = 'Humidity';
 
     humidityDiv.appendChild(humidityIcon);
