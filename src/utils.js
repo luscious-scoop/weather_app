@@ -18,5 +18,5 @@ export function convertKMHtoMPH(speed) {
 }
 
 export function convertMPHToKMH(speed) {
-  return `${Math.round(speed * 1.7)}km/h`;
+  return `${Math.round(speed * 1.60934)}km/h`;
 }
