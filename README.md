@@ -10,7 +10,7 @@ This project is all about learning about promises and async/await. I learned how
 
 ## Live Demo
 
-placeholder
+[Weather App](https://luscious-scoop.github.io/weather_app/)
 
 ### Attributions
 
