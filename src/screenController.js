@@ -163,7 +163,7 @@ export const screenController = () => {
     humidityIcon.src = humidityIconSrc;
 
     const humidityValue = document.createElement('p');
-    humidityValue.textContent = `${data.humidity}%`;
+    humidityValue.textContent = `${Math.trunc(data.humidity)}%`;
 
     const humidityTitle = document.createElement('span');
     humidityTitle.textContent = 'Humidity';
