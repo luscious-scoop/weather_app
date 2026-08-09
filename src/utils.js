@@ -2,12 +2,12 @@ export function convertTemperatureToCelsius(F) {
   const fahrenheit = F;
   const celsius = (fahrenheit - 32) * (5 / 9);
 
-  const result = `${Math.floor(celsius)}°C`;
+  const result = `${Math.round(celsius)}°C`;
   return result;
 }
 
 export function convertTemperatureToFahrenheit(F) {
-  const result = `${Math.floor(F)}°F`;
+  const result = `${Math.round(F)}°F`;
   return result;
 }
 
@@ -18,5 +18,5 @@ export function convertKMHtoMPH(speed) {
 }
 
 export function convertMPHToKMH(speed) {
-  return `${Math.round(speed * 1.60934)}km/h`;
+  return `${Math.round(speed * 1.6)}km/h`;
 }
