@@ -98,6 +98,7 @@ body {
   align-items: center;
   gap: 30px;
   color: var(--main-font-clr);
+  font-family: 'Roboto';
 }
 
 .search-div {
