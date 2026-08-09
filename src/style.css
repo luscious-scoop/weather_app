@@ -131,6 +131,8 @@ body {
 
   border: 1px solid rgb(88, 111, 169, 0.115);
 
+  box-shadow: var(--card-bg-clr) 0px 8px 24px;
+
   display: flex;
   flex-direction: column;
   gap: 4px;
