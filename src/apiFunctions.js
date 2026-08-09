@@ -19,6 +19,7 @@ const APIController = () => {
   }
 
   function processAPIData(data) {
+    console.log(data);
     const processedData = Object.assign(
       {},
       {
@@ -28,7 +29,7 @@ const APIController = () => {
         humidity: data.currentConditions.humidity,
         uvindex: data.currentConditions.uvindex,
         precip: data.currentConditions.precip,
-        wind: data.currentConditions.windgust,
+        wind: data.currentConditions.windspeed,
         condition: data.currentConditions.conditions,
         description: data.description,
         icon: data.currentConditions.icon,
