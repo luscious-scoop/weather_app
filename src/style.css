@@ -86,6 +86,10 @@ h6 {
   --card-bg-clr: rgba(255, 255, 255, 0.2);
 }
 
+button {
+  cursor: pointer;
+}
+
 body {
   background: var(--body-bg);
   min-height: 100vh;
@@ -116,27 +120,29 @@ body {
 .search-div > button {
   background: var(--search-btn-clr);
   color: var(--main-font-clr);
-  cursor: pointer;
+
   border-radius: 6px;
   border: none;
 }
 
 .card {
-  width: 350px;
-  height: 400px;
   background-color: var(--card-bg-clr);
   display: flex;
   flex-direction: column;
+  gap: 8px;
+  border-radius: 8px;
+}
+
+.card > * {
+  padding: 10px;
 }
 
 .location-div {
-  border: 2px solid red;
   display: flex;
   align-items: center;
 }
 
 .weather-div {
-  border: 2px solid yellow;
   display: flex;
   align-items: center;
 }
@@ -161,13 +167,11 @@ button.selected {
 }
 
 .metric-data {
-  border: 2px solid red;
   display: flex;
   justify-content: space-evenly;
 }
 
 .metric-data > * {
-  border: 2px solid blue;
   display: flex;
   flex-direction: column;
   align-items: center;
