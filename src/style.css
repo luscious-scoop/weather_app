@@ -164,12 +164,18 @@ body {
 .convert-btns button {
   background: transparent;
   border: none;
-  color: silver;
+  color: black;
   font-size: 1.3rem;
 }
 
 .feels-like {
   font-size: 0.8rem;
+}
+
+.description,
+.metric-data > * > span,
+.feels-like {
+  color: silver;
 }
 
 button.selected {
