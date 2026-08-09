@@ -186,12 +186,13 @@ export const screenController = () => {
     ConverterEvent(data.temp, data.feelsLike, data.wind);
   }
 
-  async function renderCardEvent() {
-    let data = await apiController.fetchApiData(input.value);
-    if (!data) {
-      return;
-    }
-    render(data);
+  function renderCardEvent() {
+    apiController.fetchApiData(input.value).then((data) => {
+      if (!data) {
+        return;
+      }
+      render(data);
+    });
   }
 
   function ConverterEvent(temperature, feelsLikeTemp, wind) {
