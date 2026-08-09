@@ -164,11 +164,12 @@ body {
 .convert-btns button {
   background: transparent;
   border: none;
-  color: black;
+  color: silver;
+  font-size: 1.3rem;
 }
 
 .feels-like {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 
 button.selected {
