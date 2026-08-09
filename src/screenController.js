@@ -1,5 +1,10 @@
 import { apiController } from './apiFunctions.js';
 import locationIconSrc from './icons/location.png';
+import umbrellaIcon from './icons/umbrella.png';
+import uvIcon from './icons/uv-index.png';
+import windIconSrc from './icons/wind.png';
+
+import humidityIconSrc from './icons/drop.png';
 
 export const screenController = () => {
   const main = document.querySelector('main');
@@ -96,6 +101,79 @@ export const screenController = () => {
     descriptionDiv.appendChild(description);
 
     card.appendChild(descriptionDiv);
+
+    const metricDataDiv = document.createElement('div');
+    metricDataDiv.classList.add('metric-data');
+
+    const precipationDiv = document.createElement('div');
+    const precipationIcon = document.createElement('img');
+
+    precipationIcon.src = umbrellaIcon;
+
+    const precipationValue = document.createElement('p');
+    precipationValue.textContent = `${data.precip}%`;
+
+    const precipationTitle = document.createElement('p');
+    precipationTitle.textContent = 'Precip';
+
+    precipationDiv.appendChild(precipationIcon);
+    precipationDiv.appendChild(precipationValue);
+    precipationDiv.appendChild(precipationTitle);
+
+    metricDataDiv.appendChild(precipationDiv);
+
+    const uvIndexDiv = document.createElement('div');
+    const uvIndexIcon = document.createElement('img');
+
+    uvIndexIcon.src = uvIcon;
+
+    const uvValue = document.createElement('p');
+    uvValue.textContent = data.uvindex;
+
+    const uvTitle = document.createElement('p');
+    uvTitle.textContent = 'UV Index';
+
+    uvIndexDiv.appendChild(uvIndexIcon);
+    uvIndexDiv.appendChild(uvValue);
+    uvIndexDiv.appendChild(uvTitle);
+
+    metricDataDiv.appendChild(uvIndexDiv);
+
+    const windDiv = document.createElement('div');
+    const windIcon = document.createElement('img');
+
+    windIcon.src = windIconSrc;
+
+    const windValue = document.createElement('p');
+    windValue.textContent = data.wind;
+
+    const windTitle = document.createElement('p');
+    windTitle.textContent = 'Wind';
+
+    windDiv.appendChild(windIcon);
+    windDiv.appendChild(windValue);
+    windDiv.appendChild(windTitle);
+
+    metricDataDiv.appendChild(windDiv);
+
+    const humidityDiv = document.createElement('div');
+    const humidityIcon = document.createElement('img');
+
+    humidityIcon.src = humidityIconSrc;
+
+    const humidityValue = document.createElement('p');
+    humidityValue.textContent = `${data.humidity}%`;
+
+    const humidityTitle = document.createElement('p');
+    humidityTitle.textContent = 'Humidity';
+
+    humidityDiv.appendChild(humidityIcon);
+    humidityDiv.appendChild(humidityValue);
+    humidityDiv.appendChild(humidityTitle);
+
+    metricDataDiv.appendChild(humidityDiv);
+
+    card.appendChild(metricDataDiv);
 
     main.appendChild(card);
     ConverterEvent(data.temp, data.feelsLike);
