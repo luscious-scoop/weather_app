@@ -145,7 +145,8 @@ export const screenController = () => {
     windIcon.src = windIconSrc;
 
     const windValue = document.createElement('p');
-    windValue.textContent = data.wind;
+    windValue.textContent = convertMPHToKMH(data.wind);
+    windValue.classList.add('wind');
 
     const windTitle = document.createElement('span');
     windTitle.textContent = 'Wind';
@@ -176,7 +177,7 @@ export const screenController = () => {
     card.appendChild(metricDataDiv);
 
     main.appendChild(card);
-    ConverterEvent(data.temp, data.feelsLike);
+    ConverterEvent(data.temp, data.feelsLike, data.wind);
   }
 
   async function renderCardEvent() {
@@ -204,9 +205,20 @@ export const screenController = () => {
     return result;
   }
 
-  function ConverterEvent(temperature, feelsLikeTemp) {
+  function convertKMHtoMPH(speed) {
+    let result = `${Math.floor(speed)}mph`;
+
+    return result;
+  }
+
+  function convertMPHToKMH(speed) {
+    return `${Math.round(speed * 1.609)}km/h`;
+  }
+
+  function ConverterEvent(temperature, feelsLikeTemp, wind) {
     const temp = document.querySelector('.temp');
     const feelsLike = document.querySelector('.feels-like');
+    const windValue = document.querySelector('.wind');
 
     const celsiusBtn = document.querySelector('.celsius-btn');
     const fahrenheitBtn = document.querySelector('.fahrenheit-btn');
@@ -214,11 +226,13 @@ export const screenController = () => {
     celsiusBtn.addEventListener('click', () => {
       temp.textContent = convertTemperatureToCelsius(temperature);
       feelsLike.textContent = `Feels like ${convertTemperatureToCelsius(feelsLikeTemp)}`;
+      windValue.textContent = convertMPHToKMH(wind);
     });
 
     fahrenheitBtn.addEventListener('click', () => {
       temp.textContent = convertTemperatureToFahrenheit(temperature);
       feelsLike.textContent = `Feels like ${convertTemperatureToFahrenheit(feelsLikeTemp)}`;
+      windValue.textContent = convertKMHtoMPH(wind);
     });
 
     changeSelectedUnit();
