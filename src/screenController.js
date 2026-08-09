@@ -206,13 +206,13 @@ export const screenController = () => {
   }
 
   function convertKMHtoMPH(speed) {
-    let result = `${Math.floor(speed)}mph`;
+    let result = `${Math.round(speed)}mph`;
 
     return result;
   }
 
   function convertMPHToKMH(speed) {
-    return `${Math.round(speed * 1.609)}km/h`;
+    return `${Math.round(speed * 1.7)}km/h`;
   }
 
   function ConverterEvent(temperature, feelsLikeTemp, wind) {
