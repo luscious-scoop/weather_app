@@ -152,15 +152,10 @@ body {
   color: black;
 }
 
-.temp {
-  font-size: 1.6rem;
-  font-weight: bold;
-}
-
 .feels-like {
   font-size: 0.7rem;
 }
 
 button.selected {
-  color: white !important;
+  color: white;
 }

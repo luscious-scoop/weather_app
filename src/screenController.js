@@ -43,7 +43,7 @@ export const screenController = () => {
     const temperatureDiv = document.createElement('div');
     temperatureDiv.classList.add('temp-div');
 
-    const temperature = document.createElement('p');
+    const temperature = document.createElement('h2');
     temperature.classList.add('temp');
 
     temperature.textContent = convertTemperatureToCelsius(data.temp);
@@ -81,6 +81,21 @@ export const screenController = () => {
     weatherDiv.appendChild(convertTempBtns);
 
     card.appendChild(weatherDiv);
+
+    const descriptionDiv = document.createElement('div');
+    descriptionDiv.classList.add('description-div');
+    const condition = document.createElement('h3');
+    condition.classList.add('condition');
+    condition.textContent = data.condition;
+
+    const description = document.createElement('p');
+    description.classList.add('description');
+    description.textContent = data.description;
+
+    descriptionDiv.appendChild(condition);
+    descriptionDiv.appendChild(description);
+
+    card.appendChild(descriptionDiv);
 
     main.appendChild(card);
     ConverterEvent(data.temp, data.feelsLike);
