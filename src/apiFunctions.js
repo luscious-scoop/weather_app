@@ -4,7 +4,7 @@ const APIController = () => {
   async function fetchApiData(location) {
     try {
       const response = await fetch(
-        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=${apiKey}`
+        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=us&key=${apiKey}`
       );
 
       if (response.status >= 400) {
