@@ -5,6 +5,12 @@ import uvIcon from './icons/uv-index.png';
 import windIconSrc from './icons/wind.png';
 
 import humidityIconSrc from './icons/drop.png';
+import {
+  convertKMHtoMPH,
+  convertTemperatureToCelsius,
+  convertMPHToKMH,
+  convertTemperatureToFahrenheit,
+} from './utils.js';
 
 export const screenController = () => {
   const main = document.querySelector('main');
@@ -190,29 +196,6 @@ export const screenController = () => {
       return;
     }
     render(data);
-  }
-
-  function convertTemperatureToCelsius(F) {
-    const fahrenheit = F;
-    const celsius = (fahrenheit - 32) * (5 / 9);
-
-    const result = `${Math.floor(celsius)}°C`;
-    return result;
-  }
-
-  function convertTemperatureToFahrenheit(F) {
-    const result = `${Math.floor(F)}°F`;
-    return result;
-  }
-
-  function convertKMHtoMPH(speed) {
-    let result = `${Math.round(speed)}mph`;
-
-    return result;
-  }
-
-  function convertMPHToKMH(speed) {
-    return `${Math.round(speed * 1.7)}km/h`;
   }
 
   function ConverterEvent(temperature, feelsLikeTemp, wind) {
