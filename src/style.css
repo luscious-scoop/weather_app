@@ -146,11 +146,14 @@ body {
 .location-div {
   display: flex;
   align-items: center;
+  gap: 5px;
 }
 
 .weather-div {
   display: flex;
   align-items: center;
+
+  gap: 8px;
 }
 
 .convert-btns {
