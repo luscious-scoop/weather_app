@@ -22,7 +22,7 @@ export const screenController = () => {
 
     const location = document.createElement('p');
     location.classList.add('location');
-    location.textContent = data.address;
+    location.textContent = `${data.address.slice(0, 1).toUpperCase() + data.address.slice(1)}`;
 
     locationDiv.appendChild(locationIcon);
     locationDiv.appendChild(location);
