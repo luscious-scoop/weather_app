@@ -187,10 +187,6 @@ export const screenController = () => {
   }
 
   async function renderCardEvent() {
-    if (input.value === '') {
-      alert('Please enter  a location.');
-      return;
-    }
     let data = await apiController.fetchApiData(input.value);
     if (!data) {
       return;

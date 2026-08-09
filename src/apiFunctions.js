@@ -2,6 +2,10 @@ const APIController = () => {
   const apiKey = 'EKS79RHNPFCJU4NX8PUVYBEJP';
 
   async function fetchApiData(location) {
+    if (location === '') {
+      alert('please enter a location');
+      return;
+    }
     try {
       const response = await fetch(
         `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=us&key=${apiKey}`
@@ -9,7 +13,7 @@ const APIController = () => {
 
       if (response.status >= 400) {
         alert('location not found');
-        return false;
+        return;
       }
       const data = await response.json();
       return processAPIData(data);
