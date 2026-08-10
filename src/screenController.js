@@ -14,7 +14,7 @@ import {
 
 export const screenController = () => {
   const main = document.querySelector('main');
-  const input = document.querySelector('input[type="text"]');
+  const input = document.querySelector('.city');
   const searchBtn = document.querySelector('.search-btn');
 
   async function render(data) {
