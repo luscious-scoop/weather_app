@@ -17,7 +17,7 @@ export const screenController = () => {
   const input = document.querySelector('input[type="text"]');
   const searchBtn = document.querySelector('.search-btn');
 
-  function render(data) {
+  async function render(data) {
     main.textContent = '';
 
     const card = document.createElement('div');
@@ -47,9 +47,9 @@ export const screenController = () => {
     const weatherIcon = document.createElement('img');
     weatherIcon.setAttribute('alt', 'weather-icon');
     weatherIcon.classList.add('weather-icon');
-    // const response = await import(`./icons/weather_icons/${data.icon}.png`);
-    // const src = await response.default;
-    // weatherIcon.src = src;
+    const response = await import(`./icons/weather_icons/${data.icon}.png`);
+    const src = await response.default;
+    weatherIcon.src = src;
 
     const temperatureDiv = document.createElement('div');
     temperatureDiv.classList.add('temp-div');
