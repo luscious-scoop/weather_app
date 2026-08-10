@@ -37,6 +37,7 @@ const APIController = () => {
         condition: data.currentConditions.conditions,
         description: data.description,
         icon: data.currentConditions.icon,
+        precipProb: data.currentConditions.precipprob,
       }
     );
 

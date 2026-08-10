@@ -117,7 +117,8 @@ export const screenController = () => {
     precipationIcon.src = umbrellaIcon;
 
     const precipationValue = document.createElement('p');
-    precipationValue.textContent = `${data.precip}%`;
+    precipationValue.textContent =
+      data.precip !== null ? `${data.precip}%` : `${data.precipProb}%`;
 
     const precipationTitle = document.createElement('span');
     precipationTitle.textContent = 'Precip';
@@ -186,13 +187,12 @@ export const screenController = () => {
     ConverterEvent(data.temp, data.feelsLike, data.wind);
   }
 
-  function renderCardEvent() {
-    apiController.fetchApiData(input.value).then((data) => {
-      if (!data) {
-        return;
-      }
-      render(data);
-    });
+  async function renderCardEvent() {
+    const data = await apiController.fetchApiData(input.value);
+    if (!data) {
+      return;
+    }
+    render(data);
   }
 
   function ConverterEvent(temperature, feelsLikeTemp, wind) {
